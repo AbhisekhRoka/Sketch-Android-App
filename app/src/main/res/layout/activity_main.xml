@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@drawable/skyback">
+
+        <LinearLayout
+            android:id="@+id/saveLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/previous"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:text="&lt;"
+                android:backgroundTint="#588B9B"/>
+
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sketch, Page"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:fontFamily="cursive"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_weight="0.3"
+                android:textAlignment="textStart"
+                android:fontFamily="cursive"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25dp"/>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:text="&gt;"
+                android:backgroundTint="#588B9B"/>
+
+        </LinearLayout>
+
+        <com.example.sketch.DoodleView
+            android:id="@+id/doodleView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/color"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:text="Colors"
+                android:textStyle="bold"
+                android:backgroundTint="#a3afff"/>
+
+            <Button
+                android:id="@+id/brush"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:text="Brush"
+                android:textStyle="bold"
+                android:backgroundTint="#F5C63C"/>
+
+            <Spinner
+                android:id="@+id/sizeSpinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#F47F6B"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <com.example.sketch.ColorWheelView
+        android:id = "@+id/colorWheel"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
+</FrameLayout>
